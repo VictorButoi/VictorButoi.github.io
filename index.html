@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang=en>
+
+<head>
+    <meta charset=utf-8>
+    <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=yes">
+    <meta name=keywords content="homepage,Victor,Butoi">
+    <meta name=description content="Personal Website of Victor Butoi, PhD Candidate at MIT">
+    <title>Victor Ion Butoi</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <link rel="icon" href="assets/PersonalWebsiteLogo.png" type="image/png">
+    <meta property="og:title" content="Victor Butoi">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="index.md">
+    <meta property="og:image:alt" content="Picture of Victor Butoi">
+</head>
+
+<body>
+    <article id=article>
+
+        <div class="portrait">
+            <div class=split>
+                <h1 class=title>Victor <span class=names>Ion Butoi</span></h1>
+                <h2 class=subtitle>
+                    PhD Student
+                    <br>
+                    Massachusetts Institute of Technology
+                    <br>
+                    <a class="nav-item nav-link" href="vbutoi@mit.edu" title="Email">
+                        <svg width="1em" height="1em" viewBox="0 0 8 5" class="bi bi-envelope" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <path d="m0 0h8v6h-8zm.75 .75v4.5h6.5v-4.5zM0 0l4 3 4-3v1l-4 3-4-3z"/>
+                        </svg> vbutoi@mit.edu </a>
+                </h2>
+                <h2 class=byline_small>Last updated: July 2023</h2>
+                <div class="portrait-text">
+                    <p>
+                        Greetings! I am a 2nd year PhD student at MIT advised by both
+                        <strong><a href=http://www.mit.edu/~adalca/>Adrian Dalca</a></strong> and
+                        <strong><a href=https://people.csail.mit.edu/guttag/>John Guttag</a></strong> as 
+                        a part of the <strong><a href=https://www.csail.mit.edu/research/clinical-machine-learning-group>Clinical and Applied Machine Learning (CAML) Group</a></strong>. 
+                        I also closely collaborate with <strong><a href=http://web.mit.edu/phillipi//>Phillip Isola's</a></strong> group. My research focuses on contributions to core applied 
+                        machine learning, often in computer vision, and often with applications to healthcare. My work is supported by the 
+                        <strong>NSF Graduate Research Fellowship</strong>.
+                        <br><br>
+                        I am interesting in helping transition machine learning from the age of building <b>task-specific</b> systems to 
+                        <b>universally-flexible</b> ones, by focusing on inference-adaptable methods that only get better in scale. Here are some current questions of mine:</p>
+                        <ul>
+                            <li><strong>Universal Image Prompting</strong>: How we can solve an unbounded number of novel <i>query</i> image tasks, across a variety of 
+                            imaging modalities, from <i>supports</i> of examples and minimal fine-tuning?</li>
+                            <li><strong>Universal Confidence Calibration</strong>: How can we ensure that networks are not overconfident (or well calibrated) on a variety of different image 
+                            tasks both in-distribution and under domain shift?</li>
+                            <li><strong>Universal Neural-Network Science</strong>: How can we investigate neural networks and build scientific foundations which generalize to a
+                            broad set of problems and network types?</li>
+                        </ul>
+                    <p>
+                        If you are interested in collaborating, please do reach out!
+                    </p>
+                </div>
+            </div>
+            <div class=split>
+                <img src=assets/profile_picture.jpg alt="Picture of Victor Butoi" width=276.5
+                                                                 height=352>
+                <div class="social-links">
+                    <ul>
+                        <li><strong><a href=https://github.com/VictorButoi/>GitHub</a></strong></li>
+                        <li><strong><a href=<a href="https://raw.githubusercontent.com/VictorButoi/VictorButoi.github.io/main/assets/Butoi_Victor_CV.pdf" download>CV</a></strong></li>
+                        <li><strong><a href=https://scholar.google.com/citations?user=7aSLkMUAAAAJ&hl=en/>Google Scholar</a></strong></li>
+                        <li><strong><a href=https://twitter.com/VictorButoi/>Twitter</a></strong></li>
+                    </ul>   
+                </div>
+            </div>
+        </div>
+
+        <script>
+            bgStrokeColor = "#BF8D7A", bgStrokeWidth = .2, rep_height = 250
+
+            const navLinks = document.querySelectorAll('header nav a');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', event => {
+                    event.preventDefault();
+                    const targetSection = document.querySelector(event.target.hash);
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+        </script>
+
+        <section id=publications class=level2>
+            <h2>Publications</h2>
+
+                <div class="project">
+                    <div class=project-image>
+                        <img src="assets/UniverSeg_teaser.png" alt="Image 3">
+                    </div>
+                    <div class=project-description>
+                        <span class=project-titles>UniverSeg: Universal Medical Image Segmentation</span>
+                        <br>
+                        <strong>Victor Ion Butoi*</strong>, 
+                        Jose J. Ortiz*, 
+                        Tianyu Ma, 
+                        John Guttag,
+                        <br> 
+                        Mert R. Sabuncu, 
+                        Adrian V. Dalca
+                        <br>
+                        <i>ICCV</i> 2023, <i>MedNeurIPS</i> 2022
+                        <br><br>
+                        <a href="https://arxiv.org/abs/2304.06131">[Paper]</a>
+                        <a href="https://github.com/JJGO/UniverSeg">[Code]</a>
+                        <a href="https://universeg.csail.mit.edu/">[Project Page]</a>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class=project-image>
+                        <img src="assets/DEUP_teaser.png" alt="Image 3">
+                    </div>
+                    <div class="project-description">
+                        <span class=project-titles>DEUP: Direct Epistemic Uncertainty Prediction</span>
+                        <br>
+                        Moksh Jain*, Salem Lahlou*, Hadi Nekoei, <strong>Victor Ion Butoi</strong>,<br>
+                        Paul Bertin, Jarrid Rector-Brooks, Maksym Korablyov, Yoshua Bengio
+                        <br>
+                        <i>TLMR</i> 2023
+                        <br><br>
+                        <a href="https://arxiv.org/abs/2102.08501">[Paper]</a>
+                        <a href="https://github.com/MJ10/DEUP">[Code]</a>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class=project-image>
+                        <img src="assets/Prostate_Teaser.png" alt="Image 3">
+                    </div>  
+                    <div class=project-description>
+                        <span class=project-titles>Empirical Analysis of a Segmentation Foundation Model in Prostate Imaging</span>
+                        <br>
+                        Moksh Jain*, <strong>Victor Ion Butoi</strong>, Mert R. Sabuncu, Adrian V. Dalca
+                        <br>
+                        <i>In submission</i> 2023
+                        <br><br>
+                        <a href="https://arxiv.org/abs/2307.03266">[Paper]</a>
+                    </div>
+                </div>
+        </section>
+
+
+        <section id=bio class=level2>
+            <h2>Bio</h2>
+            <p>I graduated from Cornell University in May 2022, where I was named
+                a <strong><a href=https://infosci.cornell.edu/information/news/newsitem1254/eight-cornell-bowers-cis-seniors-named-merrill-scholars/>Merril Presidential Scholar</a></strong>
+                and <strong><a href=https://as.cornell.edu/research/undergraduate-research#tanner-dean-s-scholars/>Tanner-Dean Scholar</a></strong>. 
+                I studied Computer Science with a focus in machine learning, and my research
+                was advised by <strong><a href=https://sabuncu.engineering.cornell.edu/>Mert Sabuncu</a></strong>.
+                Previously, I have been fortunate enough to work with:
+            </p>
+            <ul>
+                <li><strong><a href=https://mitibmwatsonailab.mit.edu/people/leonid-karlinsky/>Dr. Leonid
+                Karlinsky</a></strong> and <strong><a href=https://www.rogerioferis.org/>Dr. Rogerio Feris</a></strong> at IBM working on 
+                fusing large image and language models.</li>
+                <li><strong><a href=https://sites.google.com/view/felixwu/home/>Dr. Felix Wu</a></strong> and <strong><a href=https://www.cs.cornell.edu/~kilian/>Prof. Kilian Weinberger</a></strong> 
+                at ASAPP working on sequence modeling using state-space models.</li>
+                <li><strong><a href=https://yoshuabengio.org/>Prof. Yoshua Bengio</a></strong> and 
+                <strong><a href=https://pierrelucbacon.com/>Prof. Pierre-Luc Bacon</a></strong> at MILA on ML for drug discovery and
+                Uncertainty Quantification.</li>
+                <li><strong><a href=https://www.linkedin.com/in/fghesu>Dr. Florin Ghesu</a></strong> at Siemens working on biomedical imaging.</li>
+            </ul>
+        </section>
+
+    </article>
+    <footer>
+        <p>This wonderful website theme was made by <a href=https://s-m.ac/>Mathias
+            <span class=names>Sablé-Meyer</span></a>.</p>
+    </footer>
+</body>
+
+</html>
