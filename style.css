@@ -7,6 +7,13 @@
     --rule: #ccc;
     --award: #c0392b;
     --glow: hsl(22deg 22% 68% / .2);
+    --c-paper: #b5442d;
+    --c-code: #2f7a4b;
+    --c-page: #2b5fb8;
+    --c-github: #24292f;
+    --c-cv: #a35d00;
+    --c-scholar: #3367d6;
+    --c-twitter: #1a8ad4;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,6 +24,13 @@
         --rule: #444;
         --award: #ff6b6b;
         --glow: hsl(22deg 12% 98% / .2);
+        --c-paper: #f28b6b;
+        --c-code: #7fd3a0;
+        --c-page: #7fb0ff;
+        --c-github: #d0d7de;
+        --c-cv: #ffbf5c;
+        --c-scholar: #8ab4ff;
+        --c-twitter: #63c0ff;
     }
 }
 
@@ -105,9 +119,17 @@ svg > path {
     line-height: 1.5em;
 }
 
-.links {
-    font-size: 1.2rem;
-    margin: 1rem 0 0;
+.social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    margin-top: 1.2rem;
+}
+
+.social .pill {
+    width: 11rem;
+    font-size: 1.1rem;
 }
 
 .byline-small {
@@ -148,6 +170,7 @@ svg > path {
 }
 
 .project-meta {
+    font-size: inherit;
     margin: .6rem 0;
 }
 
@@ -162,30 +185,54 @@ svg > path {
     margin-top: .8rem;
 }
 
-.card-links a,
-.card-links span {
+.card-links .pill {
     font-size: 1rem;
+}
+
+/* Colored pill buttons; each variant only sets --c */
+
+.pill {
+    --c: var(--fg);
+    display: inline-flex;
+    align-items: center;
+    gap: .5em;
+    padding: .15em .9em;
+    border-radius: 999px;
+    color: var(--c);
+    background-color: color-mix(in srgb, var(--c) 14%, transparent);
+    border: 1px solid color-mix(in srgb, var(--c) 40%, transparent);
     font-variant: small-caps;
     font-feature-settings: "smcp" on;
     letter-spacing: .04em;
     line-height: 1.6;
-    padding: .05em .8em;
-    border: 1px solid var(--rule);
-    border-radius: 999px;
     text-decoration: none;
     transition: background-color .15s, color .15s;
 }
 
-.card-links a:hover {
-    background-color: var(--fg);
-    color: var(--bg);
-    border-color: var(--fg);
+.pill svg {
+    width: 1.1em;
+    height: 1.1em;
+    fill: currentColor;
+    flex-shrink: 0;
 }
 
-.card-links span {
-    color: var(--muted);
+a.pill:hover {
+    background-color: var(--c);
+    color: var(--bg);
+}
+
+.pill.disabled {
+    opacity: .5;
     border-style: dashed;
 }
+
+.pill.paper { --c: var(--c-paper); }
+.pill.code { --c: var(--c-code); }
+.pill.page { --c: var(--c-page); }
+.pill.github { --c: var(--c-github); }
+.pill.cv { --c: var(--c-cv); }
+.pill.scholar { --c: var(--c-scholar); }
+.pill.twitter { --c: var(--c-twitter); }
 
 footer {
     margin-top: 4rem;
