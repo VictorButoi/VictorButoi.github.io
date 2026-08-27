@@ -27,7 +27,6 @@
     --c-paper: #14635c;
     --c-code: #7a5a2e;
     --c-page: #33658a;
-    --c-social: var(--accent);
     /* type scale */
     --text-body: 1.25rem;
     --text-small: 1.1rem;
@@ -163,15 +162,27 @@ svg > path {
 
 .social {
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: .6rem;
-    margin-top: 1.25rem;
+    justify-content: center;
+    gap: 1.4rem;
+    margin-top: 1.1rem;
 }
 
-.social .pill {
-    justify-content: center;
-    font-size: var(--text-small);
+.social a {
+    color: var(--muted);
+    line-height: 0;
+    padding: .3rem;
+    transition: color .15s, transform .15s;
+}
+
+.social a:hover {
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.social a svg {
+    width: 1.45rem;
+    height: 1.45rem;
+    fill: currentColor;
 }
 
 /* Publication cards */
@@ -263,10 +274,6 @@ a.pill:focus-visible {
 .pill.paper { --c: var(--c-paper); }
 .pill.code { --c: var(--c-code); }
 .pill.page { --c: var(--c-page); }
-.pill.github,
-.pill.cv,
-.pill.scholar,
-.pill.x { --c: var(--c-social); }
 
 /* Small sections */
 
@@ -309,11 +316,5 @@ footer > p {
 
     .project-image {
         flex-basis: auto;
-    }
-
-    .social {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
     }
 }
