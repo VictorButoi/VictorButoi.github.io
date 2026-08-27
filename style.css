@@ -155,6 +155,38 @@ svg > path {
     color: var(--award);
 }
 
+.card-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-top: .8rem;
+}
+
+.card-links a,
+.card-links span {
+    font-size: 1rem;
+    font-variant: small-caps;
+    font-feature-settings: "smcp" on;
+    letter-spacing: .04em;
+    line-height: 1.6;
+    padding: .05em .8em;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    text-decoration: none;
+    transition: background-color .15s, color .15s;
+}
+
+.card-links a:hover {
+    background-color: var(--fg);
+    color: var(--bg);
+    border-color: var(--fg);
+}
+
+.card-links span {
+    color: var(--muted);
+    border-style: dashed;
+}
+
 footer {
     margin-top: 4rem;
     padding-top: 1rem;
