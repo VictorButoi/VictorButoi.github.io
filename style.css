@@ -225,6 +225,10 @@ svg > path {
     font-style: italic;
 }
 
+.award-highlight {
+    --award: #b42318;
+}
+
 .card-links {
     display: flex;
     flex-wrap: wrap;
